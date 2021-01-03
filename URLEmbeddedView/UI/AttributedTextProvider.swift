@@ -12,10 +12,10 @@ public final class AttributedTextProvider: NSObject {
     @objc(sharedInstance)
     static let shared = AttributedTextProvider()
     
-    private let titleAttributeManager       = AttributeManager(style: .title)
-    private let domainAttributeManager      = AttributeManager(style: .domain)
-    private let descriptionAttributeManager = AttributeManager(style: .description)
-    private let noDataTitleAttributeManager = AttributeManager(style: .noDataTitle)
+    public let titleAttributeManager       = AttributeManager(style: .title)
+    public let domainAttributeManager      = AttributeManager(style: .domain)
+    public let descriptionAttributeManager = AttributeManager(style: .description)
+    public let noDataTitleAttributeManager = AttributeManager(style: .noDataTitle)
     
     var didChangeValue: ((AttributeManager.Style, AttributeManager.Attribute, Any) -> Void)?
     
