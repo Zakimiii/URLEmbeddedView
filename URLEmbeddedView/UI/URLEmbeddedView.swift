@@ -24,33 +24,33 @@ protocol URLEmbeddedViewProtocol: class {
 @objc open class URLEmbeddedView: UIView {
     
     //MARK: - Properties
-    private let alphaView = UIView()
+    public let alphaView = UIView()
     
     let imageView = URLImageView()
     private var imageViewWidthConstraint: NSLayoutConstraint?
     
-    private let titleLabel = UILabel()
+    public let titleLabel = UILabel()
     private var titleLabelHeightConstraint: NSLayoutConstraint?
-    private let descriptionLabel = UILabel()
+    public let descriptionLabel = UILabel()
     
-    private let domainConainter = UIView()
+    public let domainConainter = UIView()
     private var domainContainerHeightConstraint: NSLayoutConstraint?
-    private let domainLabel = UILabel()
+    public let domainLabel = UILabel()
     private let domainImageView = URLImageView()
     private var domainImageViewToDomainLabelConstraint: NSLayoutConstraint?
     private var domainImageViewWidthConstraint: NSLayoutConstraint?
 
     #if os(iOS)
         #if swift(>=4.2)
-        private let activityView = UIActivityIndicatorView(style: .gray)
+        public let activityView = UIActivityIndicatorView(style: .gray)
         #else
-        private let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        public let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         #endif
     #elseif os(tvOS)
         #if swift(>=4.2)
-        private let activityView = UIActivityIndicatorView(style: .white)
+        public let activityView = UIActivityIndicatorView(style: .white)
         #else
-        private let activityView = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        public let activityView = UIActivityIndicatorView(activityIndicatorStyle: .white)
         #endif
     #endif
     private lazy var linkIconView = LinkIconView(frame: self.bounds)
